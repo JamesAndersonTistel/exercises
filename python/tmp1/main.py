@@ -25,7 +25,7 @@ def fetch_test_data(url):
 
 def run():
     'main function'
-    print('start')
+    print('start hello')
 
     print('end')
 
