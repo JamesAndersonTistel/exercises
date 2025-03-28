@@ -7,9 +7,9 @@ import pickle
 import requests
 
 
-def fetch_test_data(url):
+def fetch_test_data(url, fname='fetch_test_data.pickle'):
     'be nice to test api pickle result to reduce calls to api.'
-    fname = 'api_data.pickle'
+
     result = None
 
     if os.path.exists(fname):
@@ -25,7 +25,7 @@ def fetch_test_data(url):
 
 def run():
     'main function'
-    print('start hello')
+    print('start')
 
     print('end')
 
