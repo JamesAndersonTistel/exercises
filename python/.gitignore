@@ -1,0 +1,4 @@
+\.py3dev/
+__pycache__/
+*.pickle
+\.ipynb_checkpoints/
