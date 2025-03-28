@@ -7,5 +7,10 @@ python3 --version
 
 python -m venv .py3dev
 source .py3dev/bin/activate
-pip install -r ./requirements.txt 
+pip install -r ./requirements.txt
+```
+
+## run
+```
+python ./main.py
 ```
