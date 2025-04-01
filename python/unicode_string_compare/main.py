@@ -30,14 +30,31 @@ Using Normal Form C with case folding:
 
 """
 
-from unicodedata import normalize
+from unicodedata import normalize, combining
+
 
 def nfc_equal(str1, str2):
     return normalize('NFC', str1) == normalize('NFC', str2)
 
+
 def fold_equal(str1, str2):
     return (normalize('NFC', str1).casefold() ==
             normalize('NFC', str2).casefold())
+
+
+def shave_marks(txt):
+    """Remove all diacritic marks
+
+    >>> s5 = 'São Paulo'
+    >>> s6 = 'Sao Paulo'
+    >>> shave_marks(s5) == s6
+    True
+    """
+    norm_txt = normalize('NFD', txt)
+    shaved = ''.join(c for c in norm_txt
+                     if not combining(c))
+    return normalize('NFC', shaved)
+
 
 if __name__ == '__main__':
     import doctest
