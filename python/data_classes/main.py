@@ -21,7 +21,7 @@ True
 
 from collections import namedtuple
 from typing import NamedTuple
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 
 class Coordinate:
@@ -71,16 +71,24 @@ class Coordinate3:
         return f'{abs(self.lat):.1f}°{ns}, {abs(self.lon):.1f}°{we}'
 
 def run1():
-    City = namedtuple('City', 'name country population coordinates')  
-    tokyo = City('Tokyo', 'JP', 36.933, (35.689722, 139.691667))  
+    City = namedtuple('City', 'name country population coordinates')
+    tokyo = City('Tokyo', 'JP', 36.933, (35.689722, 139.691667))
     print(f"{tokyo}, {tokyo.population}, {tokyo.coordinates}, {tokyo[1]}")
     print(tokyo._fields)
     print(tokyo._asdict())
 
-    
-    
+@dataclass
+class ClubMember:
+    name: str
+    guests: list[str] = field(default_factory=list)
+
+def run2():
+    cm = ClubMember('Howdy',['a','b','c'])
+    print(cm)
+
+
 if __name__ == '__main__':
     #import doctest
     #doctest.testmod()
 
-    run1()
+    run2()
