@@ -21,8 +21,10 @@ cities = [
 
 def match_asian_cities():
     '''
-    >>> match_asian_cities()
-    [City(continent='Asia', name='Tokyo', country='JP'), City(continent='Asia', name='Delhi', country='IN')]
+    >>> res = match_asian_cities()
+    >>> res # doctest: +NORMALIZE_WHITESPACE
+    [City(continent='Asia', name='Tokyo', country='JP'), City(continent='Asia',
+    name='Delhi', country='IN')]
     '''
     results = []
 
