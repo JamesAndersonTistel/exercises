@@ -32,15 +32,15 @@ def match_asian_cities():
         match city:
             case City(continent='Asia'):
                 results.append(city)
-    
+
     return results
 
 
 def run1():
-    print()
+    print(City.__match_args__)
 
 if __name__ == '__main__':
     import doctest
     doctest.testmod()
 
-    
+    #run1()
