@@ -22,8 +22,8 @@ def check_for_win(shared_state: dict):
     winner = None
     win_lines = [
         [(0, 0), (0, 1), (0, 2)],
-        #[(1, 0), (1, 1), (1, 2)],
-        #[(2, 0), (2, 1), (2, 2)],
+        [(1, 0), (1, 1), (1, 2)],
+        [(2, 0), (2, 1), (2, 2)],
     ]
 
     for wl in win_lines:
@@ -44,7 +44,6 @@ def check_for_win(shared_state: dict):
             winner = w
             break
 
-    print(f'winner: {winner}. 1')
     return winner
 
 
